@@ -11,10 +11,12 @@ export const WeatherProvider = (props) => {
   const [data, setData] = useState(null);
   const [searchCity, setSearchCity] = useState(null);
 
-  const fetchData = async () => {
-    const response = await getWeatherDataForCity(searchCity);
-    setData(response);
-  };
+  const fetchData = async (city) => {
+  const targetCity = city || searchCity;
+  const response = await getWeatherDataForCity(targetCity);
+  setData(response);
+};
+
 
   return (
     <WeatherContext.Provider

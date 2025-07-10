@@ -7,7 +7,7 @@ const Input = () => {
 
   useEffect(() => {
     const fetchSuggestions = async () => {
-      if (weather.searchCity.length < 2) return setSuggestions([]);
+      if (weather.searchCity.length < 1) return setSuggestions([]);
 
       try {
         const res = await fetch(
